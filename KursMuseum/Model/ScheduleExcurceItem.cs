@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace KursMuseum.Model
 {
-    public class Schedule
-    {
+    public class ScheduleExcurceItem
+    {        
         public DateTime TimeStart { get; set; }
         public DateTime TimeFinish { get; set; }
-        public string NameEx { get; set; }
-        public int Count { get; set; }
+        public TypeExcurce TypeExcurce { get; set; }
+        public int PeopleCount { get; set; }
     }
 }

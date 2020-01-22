@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace KursMuseum.Model
 {
-    class Excurce
+   public class TypeExcurce
     {
+        public int idTypeExcurce { get; set; }
+        public string ExcurceName { get; set; }
     }
 }
