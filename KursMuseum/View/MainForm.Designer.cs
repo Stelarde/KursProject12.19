@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvMainTable = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,8 +50,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExcItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.typeExcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeFinishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeTicketDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceTicketDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMainTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -59,14 +64,27 @@
             // 
             // dgvMainTable
             // 
+            this.dgvMainTable.AutoGenerateColumns = false;
             this.dgvMainTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMainTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
+            this.Column1,
+            this.typeExcDataGridViewTextBoxColumn,
+            this.timeStartDataGridViewTextBoxColumn,
+            this.timeFinishDataGridViewTextBoxColumn,
+            this.typeTicketDataGridViewTextBoxColumn,
+            this.priceTicketDataGridViewTextBoxColumn});
+            this.dgvMainTable.DataSource = this.ExcItemBindingSource;
             this.dgvMainTable.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvMainTable.Location = new System.Drawing.Point(0, 24);
             this.dgvMainTable.Name = "dgvMainTable";
             this.dgvMainTable.Size = new System.Drawing.Size(618, 426);
             this.dgvMainTable.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "№";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 75;
             // 
             // menuStrip1
             // 
@@ -237,15 +255,39 @@
             this.button1.Text = "Продать билет";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "№";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 75;
-            // 
             // ExcItemBindingSource
             // 
             this.ExcItemBindingSource.DataSource = typeof(KursMuseum.Model.ExcurceItem);
+            // 
+            // typeExcDataGridViewTextBoxColumn
+            // 
+            this.typeExcDataGridViewTextBoxColumn.DataPropertyName = "TypeExc";
+            this.typeExcDataGridViewTextBoxColumn.HeaderText = "TypeExc";
+            this.typeExcDataGridViewTextBoxColumn.Name = "typeExcDataGridViewTextBoxColumn";
+            // 
+            // timeStartDataGridViewTextBoxColumn
+            // 
+            this.timeStartDataGridViewTextBoxColumn.DataPropertyName = "TimeStart";
+            this.timeStartDataGridViewTextBoxColumn.HeaderText = "TimeStart";
+            this.timeStartDataGridViewTextBoxColumn.Name = "timeStartDataGridViewTextBoxColumn";
+            // 
+            // timeFinishDataGridViewTextBoxColumn
+            // 
+            this.timeFinishDataGridViewTextBoxColumn.DataPropertyName = "TimeFinish";
+            this.timeFinishDataGridViewTextBoxColumn.HeaderText = "TimeFinish";
+            this.timeFinishDataGridViewTextBoxColumn.Name = "timeFinishDataGridViewTextBoxColumn";
+            // 
+            // typeTicketDataGridViewTextBoxColumn
+            // 
+            this.typeTicketDataGridViewTextBoxColumn.DataPropertyName = "TypeTicket";
+            this.typeTicketDataGridViewTextBoxColumn.HeaderText = "TypeTicket";
+            this.typeTicketDataGridViewTextBoxColumn.Name = "typeTicketDataGridViewTextBoxColumn";
+            // 
+            // priceTicketDataGridViewTextBoxColumn
+            // 
+            this.priceTicketDataGridViewTextBoxColumn.DataPropertyName = "PriceTicket";
+            this.priceTicketDataGridViewTextBoxColumn.HeaderText = "PriceTicket";
+            this.priceTicketDataGridViewTextBoxColumn.Name = "priceTicketDataGridViewTextBoxColumn";
             // 
             // MainForm
             // 
@@ -293,6 +335,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource ExcItemBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeExcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeStartDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeFinishDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeTicketDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceTicketDataGridViewTextBoxColumn;
     }
 }
 

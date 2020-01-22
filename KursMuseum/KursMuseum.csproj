@@ -47,9 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Excurce.cs" />
-    <Compile Include="Model\ExcurceItem.cs" />
-    <Compile Include="Model\Schedule.cs" />
+    <Compile Include="DAL\LocalStorage.cs" />
+    <Compile Include="Model\ScheduleExcurceItem.cs" />
+    <Compile Include="Model\SellTicket.cs" />
+    <Compile Include="Model\TypeExcurce.cs" />
+    <Compile Include="Model\TypeTicket.cs" />
+    <Compile Include="Model\TypeTicketExcurce.cs" />
     <Compile Include="Presenter\CreatedPrs.cs" />
     <Compile Include="Presenter\IMainPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />

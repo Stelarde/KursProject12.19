@@ -20,6 +20,7 @@ namespace KursMuseum.Presenter
         public void Run()
         {
             mainView.Show();
+            
         }
 
         public MainPresenter (IMainForm view)

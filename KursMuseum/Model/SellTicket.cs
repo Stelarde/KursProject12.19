@@ -9,9 +9,9 @@ namespace KursMuseum.Model
     public class SellTicket
     {
         public string idTicket { get; set; }
-        public ScheduleItem ScheduleItem { get; set; }
+        
         public DateTime SellTime { get; set; }
-        public TypeTicket TypeTicket { get; set; }
+        public TypeTicketExcurce TypeTicketExcurce { get; set; }
         public double PriceTicket { get; set; }
 
     }
