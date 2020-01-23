@@ -11,21 +11,24 @@ namespace KursMuseum.DAL
     {
         public List<TypeExcurce> TypeExcurces = new List<TypeExcurce>();        
         public List<SellTicket> SellTickets = new List<SellTicket>();
+        public List<TypeTicket> TypeTickets = new List<TypeTicket>();
         public List<ScheduleExcurceItem> ScheduleExcurceItems = new List<ScheduleExcurceItem>();
         public List<TypeTicketExcurce> TypeTicketExcurces = new List<TypeTicketExcurce>();
 
         public void FillExcurceItems()
         {
-            ExcurceItems = new List<ExcurceItem>()
+            TypeExcurces = new List<TypeExcurce>()
             {
-                new ExcurceItem()
+                new TypeExcurce()
                 {
-                   TypeExc = "1",
-                   TypeTicket = "2",
-                   PriceTicket = 14.88
-
+                   idTypeExcurce = 1,
+                   ExcurceName = ""
                 }
             };
+        }
+        public LocalStorage()
+        {
+            FillExcurceItems();
         }
     }
 }
