@@ -10,6 +10,6 @@ namespace KursMuseum.Model
     {
         public TypeTicket TypeTicket { get; set; }
         public ScheduleExcurceItem ScheduleExcurceItem { get; set; }
-        public double price { get; set; }
+        //public double price { get; set; }
     }
 }
