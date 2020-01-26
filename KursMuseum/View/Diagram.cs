@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace KursMuseum.View
 {
-    public partial class Diagram : Form
+    public partial class Diagram : Form, IDiagram
     {
         public Diagram()
         {

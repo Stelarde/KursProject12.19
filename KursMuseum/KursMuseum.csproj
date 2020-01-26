@@ -50,14 +50,13 @@
     <Compile Include="DAL\LocalStorage.cs" />
     <Compile Include="Model\ScheduleExcursionItem.cs" />
     <Compile Include="Model\SellTicket.cs" />
-    <Compile Include="Model\TypeExcursion.cs" />
     <Compile Include="Model\TypeTicket.cs" />
     <Compile Include="Model\TypeTicketExcursion.cs" />
     <Compile Include="Presenter\CreatedPrs.cs" />
     <Compile Include="Presenter\IMainPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
-    <Compile Include="Presenter\RaspPrs.cs" />
     <Compile Include="Presenter\SellPrs.cs" />
+    <Compile Include="Presenter\DiagramPrs.cs" />
     <Compile Include="View\CreatedEx.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,9 +70,9 @@
       <DependentUpon>Diagram.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ICreatedEx.cs" />
+    <Compile Include="View\IDiagram.cs" />
     <Compile Include="View\IMainForm.cs" />
-    <Compile Include="View\IRaspForm.cs" />
-    <Compile Include="View\ISellEx.cs" />
+    <Compile Include="View\ISellForm.cs" />
     <Compile Include="View\IView.cs" />
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
@@ -83,17 +82,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\RaspForm.cs">
+    <Compile Include="View\SellForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RaspForm.Designer.cs">
-      <DependentUpon>RaspForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\SellEx.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SellEx.Designer.cs">
-      <DependentUpon>SellEx.cs</DependentUpon>
+    <Compile Include="View\SellForm.Designer.cs">
+      <DependentUpon>SellForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\CreatedEx.resx">
       <DependentUpon>CreatedEx.cs</DependentUpon>
@@ -113,11 +106,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\RaspForm.resx">
-      <DependentUpon>RaspForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SellEx.resx">
-      <DependentUpon>SellEx.cs</DependentUpon>
+    <EmbeddedResource Include="View\SellForm.resx">
+      <DependentUpon>SellForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\KursMuseum.Model.ExcurceItem.datasource" />
     <None Include="Properties\DataSources\KursMuseum.Model.ExItem.datasource" />

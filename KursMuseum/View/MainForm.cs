@@ -13,20 +13,10 @@ namespace KursMuseum.View
 {
     public partial class MainForm : Form, IMainForm
     {
-        public int CountTickets 
+        public int PriceTickets 
         { 
-            get => int.Parse(txtCountTickets.Text); 
-            set => txtCountTickets.Text = Convert.ToString(value); 
-        }
-        public int BalanceTickets 
-        { 
-            get => int.Parse(txtBalanceTickets.Text);
-            set => txtBalanceTickets.Text = Convert.ToString(value);  
-        }
-        public double Sum 
-        { 
-            get => double.Parse(txtSum.Text);
-            set => txtSum.Text = Convert.ToString(value);  
+            get => int.Parse(txtPriceTicket.Text);
+            set => txtPriceTicket.Text = Convert.ToString(value);  
         }
         /*public List<TypeTicket> TypeTickets 
         {
@@ -43,25 +33,30 @@ namespace KursMuseum.View
             get => dgvMainTable.DataSource as List<ScheduleExcursionItem>;
             set => dgvMainTable.DataSource = value;
         }
+        public List<String> TypeTickets 
+        {
+            get => cbTypeTicket.DataSource as List<String>;
+            set => cbTypeTicket.DataSource = value;
+        }
         public MainForm()
         {
             InitializeComponent();
+        }
 
+        public event EventHandler SoldTickets
+        {
+            add => btnSoldTicket.Click += value;
+            remove => btnSoldTicket.Click -= value;
         }
         public new void Show()
         {
             Application.Run(this);
         }
 
-        public event EventHandler RaspEx
+        public event EventHandler AddEx
         {
-            add => button4.Click += value;
-            remove => button4.Click -= value;
-        }
-        public event EventHandler SellForm
-        {
-            add => button1.Click += value;
-            remove => button1.Click -= value;
+            add => btnAddExcursion.Click += value;
+            remove => btnAddExcursion.Click -= value;
         }
     }
 }

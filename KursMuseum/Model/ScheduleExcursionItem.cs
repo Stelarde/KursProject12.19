@@ -9,21 +9,20 @@ namespace KursMuseum.Model
 {
     public class ScheduleExcursionItem
     {
-        //Номер экскурсии
-        [DisplayName("ID Экскурсии")]
-        public int IdScheduleExcursionItem { get; set; }
-        [DisplayName("Тип экскурсии")]
-        //Тип экскурсии     
+        [DisplayName("Название экскурсии")]
+        //Название экскурсии     
         public string TypeExcursion { get; set; }
-        [DisplayName("Время начала экскурсии")]
+        [DisplayName("Дата и время начала экскурсии")]
         //Время начала экскурсии
         public DateTime TimeStart { get; set; }
-        [DisplayName("Время конца экскурсии")]
+        [DisplayName("Дата и время конца экскурсии")]
         //Время конца экскурсии
-        public DateTime TimeFinish { get; set; }  
-        [DisplayName("Возможное количество людей")]
+        public DateTime TimeFinish { get; set; }
+        [DisplayName("Место сбора поситителей")]
+        //Место сбора поситителей
+        public string Venue { get; set; } 
+        [DisplayName("Осталось билетов")]
         //Возможное количество людей
-        public int PeopleCount { get; set; }
-        //public List<TypeExcursion> TypeExcursions = new List<TypeExcursion>();
+        public int TicketsLeft { get; set; }
     }
 }

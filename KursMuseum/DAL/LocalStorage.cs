@@ -8,31 +8,21 @@ using KursMuseum.Model;
 namespace KursMuseum.DAL
 {
     public class LocalStorage
-    {
-        public List<TypeExcursion> TypeExcursions = new List<TypeExcursion>();        
+    {  
         public List<SellTicket> SellTickets = new List<SellTicket>();
         public List<TypeTicket> TypeTickets = new List<TypeTicket>();
         public List<ScheduleExcursionItem> ScheduleExcursionItems = new List<ScheduleExcursionItem>();
         public List<TypeTicketExcursion> TypeTicketExcursions = new List<TypeTicketExcursion>();
 
-        public void FillTypeExcursions()
-        {
-            TypeExcursions = new List<TypeExcursion>()
-            {
-                new TypeExcursion()
-                {
-                   idTypeExcursion = 1,
-                   ExcursionName = "Дворцовые перевороты",
-                }
-            };
-        }
         public void FillSellTickets()
         {
+            //Заполнить
             SellTickets = new List<SellTicket>()
             {
                 new SellTicket()
                 {
                     idTicket = "2",
+                    TimeStart = ScheduleExcursionItems[SellTickets[].idTicket].TimeStart,
                     SellTime = DateTime.Now,
                     TypeTicketExcursion = TypeTicketExcursions,
                     PriceTicket = 15.25,
@@ -45,8 +35,18 @@ namespace KursMuseum.DAL
             {
                 new TypeTicket()
                 {
-                    IdTypeTicket = 3,
-                    TicketName = "Детский"
+                    SalesRatio = 1.1,
+                    TicketName = "Детский",
+                },
+                new TypeTicket()
+                {
+                    SalesRatio = 1.3,
+                    TicketName = "Обычный",
+                },
+                new TypeTicket()
+                {
+                    SalesRatio = 1.1,
+                    TicketName = "Пенсионный",
                 }
             };
         }
@@ -56,11 +56,11 @@ namespace KursMuseum.DAL
             {
                 new ScheduleExcursionItem()
                 {
-                    IdScheduleExcursionItem = 0,
-                    TypeExcursion = TypeExcursions[0].ExcursionName,
+                    TypeExcursion = "Дворцовые перевороты",
                     TimeStart = DateTime.Now,
                     TimeFinish = DateTime.MaxValue,
-                    PeopleCount = 20,
+                    Venue = "3 зал",
+                    TicketsLeft = 20,
                 }
             };
         }
@@ -72,13 +72,11 @@ namespace KursMuseum.DAL
                 {
                     TypeTickets = TypeTickets,
                     ScheduleExcursionItems = ScheduleExcursionItems,
-                    //price = 13.25,
                 }
             };
         }
         public LocalStorage()
         {
-            FillTypeExcursions();
             FillSellTickets();
             FillTypeTickets();
             FillScheduleExcursionItems();

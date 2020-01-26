@@ -9,11 +9,15 @@ namespace KursMuseum.Presenter
 {
     class SellPrs
     {
-        ISellEx sellEx;
-        public SellPrs(ISellEx SE)
+        ISellForm raspForm;
+        public SellPrs(ISellForm RF)
         {
-            sellEx = SE;
-            sellEx.Show();
+            raspForm = RF;
+            raspForm.Show();
         }
-    }
+        private void AddExClick(object sender, EventArgs e)
+        {
+            var ex = new CreatedPrs(new CreatedEx());
+        }
+    }   
 }

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace KursMuseum.View
 {
-    interface ISellEx : IView
+    interface IDiagram : IView
     {
-
     }
 }

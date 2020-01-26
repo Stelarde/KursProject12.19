@@ -18,24 +18,24 @@ namespace KursMuseum.Presenter
         {
             mainView.Show();            
         }
-
         public MainPresenter (IMainForm view, LocalStorage db)
         {
             mainView = view;
-            view.RaspEx += RaspExClick;
-            view.SellForm += SellFormOpen;
+            view.AddEx += AddExClick;
+            view.SoldTickets += SoldTicketsClick;
+            List<string> TypeTicket = new List<string> {db.TypeTickets[0].TicketName, db.TypeTickets[1].TicketName, db.TypeTickets[2].TicketName};
             //view.TypeTickets = db.TypeTickets;
             //view.TypeTicketsExcursions = db.TypeTicketExcursions;
             view.ScheduleExcursionItems = db.ScheduleExcursionItems;
+            view.TypeTickets = TypeTicket;
         }
-        private void RaspExClick(object sender, EventArgs e)
+        private void AddExClick(object sender, EventArgs e)
         {
-            var rf = new RaspPrs(new RaspForm());
-            //mainView.Sum
+            var rf = new CreatedPrs(new CreatedEx());
         }
-        private void SellFormOpen(object sender, EventArgs e)
+        private void SoldTicketsClick(object sender, EventArgs e)
         {
-            var se = new SellPrs(new SellEx());
+            var sf = new SellPrs(new SellForm());
         }
     }
 }

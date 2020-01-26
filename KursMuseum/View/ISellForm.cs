@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace KursMuseum.View
 {
-    public interface IRaspForm : IView
+    public interface ISellForm : IView
     {
-        event EventHandler AddEx;
+
     }
 }

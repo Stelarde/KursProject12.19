@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace KursMuseum.View
 {
-    public partial class RaspForm : Form, IRaspForm
+    public partial class SellForm : Form, ISellForm
     {
-        public RaspForm()
+        public SellForm()
         {
             InitializeComponent();            
-        }
-        public event EventHandler AddEx
-        {
-            add => Button1.Click += value;
-            remove => Button1.Click -= value;
         }
     }
 }

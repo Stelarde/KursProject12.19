@@ -12,6 +12,7 @@ namespace KursMuseum.Model
         public List<TypeTicket> TypeTickets = new List<TypeTicket>(); 
         //Список экскурсий
         public List<ScheduleExcursionItem> ScheduleExcursionItems = new List<ScheduleExcursionItem>();
+
         //public TypeTicket TypeTicket { get; set; }
         //public ScheduleExcurceItem ScheduleExcurceItem { get; set; }   
         //public double price { get; set; }

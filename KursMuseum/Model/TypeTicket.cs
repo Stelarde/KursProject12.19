@@ -9,10 +9,9 @@ namespace KursMuseum.Model
 {
     public class TypeTicket
     {
-        //Номер типа билета
-        public int IdTypeTicket { get; set; }
+        //Коэффициент от типа билета
+        public double SalesRatio { get; set; }
         //Название билета
         public string TicketName { get; set; }
-
     }
 }
