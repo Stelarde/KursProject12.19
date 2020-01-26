@@ -8,10 +8,14 @@ namespace KursMuseum.Model
 {
     public class SellTicket
     {
-        public string idTicket { get; set; }        
+        //Номер билета
+        public string idTicket { get; set; }
+        //Время покупки билета    
         public DateTime SellTime { get; set; }
-        public TypeTicketExcurce TypeTicketExcurce { get; set; }
+        //Тип билета
+        public List<TypeTicketExcursion> TypeTicketExcursion = new List<TypeTicketExcursion>();
+        //Стоимость билета
         public double PriceTicket { get; set; }
-
+        //public TypeTicketExcurce TypeTicketExcurce { get; set; }
     }
 }

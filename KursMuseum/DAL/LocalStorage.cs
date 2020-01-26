@@ -9,20 +9,20 @@ namespace KursMuseum.DAL
 {
     public class LocalStorage
     {
-        public List<TypeExcurce> TypeExcurces = new List<TypeExcurce>();        
+        public List<TypeExcursion> TypeExcursions = new List<TypeExcursion>();        
         public List<SellTicket> SellTickets = new List<SellTicket>();
         public List<TypeTicket> TypeTickets = new List<TypeTicket>();
-        public List<ScheduleExcurceItem> ScheduleExcurceItems = new List<ScheduleExcurceItem>();
-        public List<TypeTicketExcurce> TypeTicketExcurces = new List<TypeTicketExcurce>();
+        public List<ScheduleExcursionItem> ScheduleExcursionItems = new List<ScheduleExcursionItem>();
+        public List<TypeTicketExcursion> TypeTicketExcursions = new List<TypeTicketExcursion>();
 
-        public void FillTypeExcurces()
+        public void FillTypeExcursions()
         {
-            TypeExcurces = new List<TypeExcurce>()
+            TypeExcursions = new List<TypeExcursion>()
             {
-                new TypeExcurce()
+                new TypeExcursion()
                 {
-                   idTypeExcurce = 1,
-                   ExcurceName = "Дворцовые перевороты",
+                   idTypeExcursion = 1,
+                   ExcursionName = "Дворцовые перевороты",
                 }
             };
         }
@@ -34,7 +34,7 @@ namespace KursMuseum.DAL
                 {
                     idTicket = "2",
                     SellTime = DateTime.Now,
-                    //TypeTicketExcurce
+                    TypeTicketExcursion = TypeTicketExcursions,
                     PriceTicket = 15.25,
                 }
             };
@@ -50,39 +50,39 @@ namespace KursMuseum.DAL
                 }
             };
         }
-        public void FillScheduleExcurceItems()
+        public void FillScheduleExcursionItems()
         {
-            ScheduleExcurceItems = new List<ScheduleExcurceItem>()
+            ScheduleExcursionItems = new List<ScheduleExcursionItem>()
             {
-                new ScheduleExcurceItem()
+                new ScheduleExcursionItem()
                 {
-                    IdScheduleExcurceItem = 5,
-                    STypeExcurce = TypeExcurces[0],//Должен быть лист
+                    IdScheduleExcursionItem = 0,
+                    TypeExcursion = TypeExcursions[0].ExcursionName,
                     TimeStart = DateTime.Now,
                     TimeFinish = DateTime.MaxValue,
                     PeopleCount = 20,
                 }
             };
         }
-        public void FillTypeTicketExcurces()
+        public void FillTypeTicketExcursions()
         {
-            TypeTicketExcurces = new List<TypeTicketExcurce>()
+            TypeTicketExcursions = new List<TypeTicketExcursion>()
             {
-                new TypeTicketExcurce()
+                new TypeTicketExcursion()
                 {
-                    TypeTicket=TypeTickets[0],//Должен быть лист
-                    ScheduleExcurceItem = ScheduleExcurceItems[0],//Должен быть лист
+                    TypeTickets = TypeTickets,
+                    ScheduleExcursionItems = ScheduleExcursionItems,
                     //price = 13.25,
                 }
             };
         }
         public LocalStorage()
         {
-            FillTypeExcurces();
+            FillTypeExcursions();
             FillSellTickets();
             FillTypeTickets();
-            FillScheduleExcurceItems();
-            FillTypeTicketExcurces();
+            FillScheduleExcursionItems();
+            FillTypeTicketExcursions();
         }
     }
 }

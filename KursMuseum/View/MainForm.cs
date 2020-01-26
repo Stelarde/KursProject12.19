@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KursMuseum.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,37 +28,25 @@ namespace KursMuseum.View
             get => double.Parse(txtSum.Text);
             set => txtSum.Text = Convert.ToString(value);  
         }
-
+        /*public List<TypeTicket> TypeTickets 
+        {
+            get => dgvMainTable.DataSource as List<TypeTicket>;
+            set => dgvMainTable.DataSource = value; 
+        }*/
+        /*public List<TypeTicketExcurce> TypeTicketsExcurces 
+        { 
+            get => dgvMainTable.DataSource as List<TypeTicketExcurce>;
+            set => dgvMainTable.DataSource = value;
+        }*/
+        public List<ScheduleExcursionItem> ScheduleExcursionItems
+        {
+            get => dgvMainTable.DataSource as List<ScheduleExcursionItem>;
+            set => dgvMainTable.DataSource = value;
+        }
         public MainForm()
         {
             InitializeComponent();
-            dgvMainTable.Rows.Clear();
-            dgvMainTable.Columns.Clear();
-            dgvMainTable.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "TypeExc",
-                HeaderText = "Тип экскурсии"
-            });
-            dgvMainTable.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "TimeStart",
-                HeaderText = "Дата и время начала экскурсии"
-            });
-            dgvMainTable.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "TimeFinish",
-                HeaderText = "Дата и время конца экскурсии"
-            });
-            dgvMainTable.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "TypeTicket",
-                HeaderText = "Тип билета"
-            });
-            dgvMainTable.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "PriceTicket",
-                HeaderText = "Цена билета"
-            });
+
         }
         public new void Show()
         {
