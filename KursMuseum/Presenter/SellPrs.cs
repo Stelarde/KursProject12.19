@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KursMuseum.DAL;
 using KursMuseum.View;
 
 namespace KursMuseum.Presenter
 {
     class SellPrs
     {
-        ISellForm raspForm;
-        public SellPrs(ISellForm RF)
+        ISellForm sellForm;
+        public SellPrs(ISellForm RF, LocalStorage db)
         {
-            raspForm = RF;
-            raspForm.Show();
+            sellForm = RF;
+            sellForm.Show();
+            sellForm.SellTickets = db.SellTickets;
         }
         private void AddExClick(object sender, EventArgs e)
         {

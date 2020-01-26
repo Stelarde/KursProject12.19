@@ -13,6 +13,7 @@ namespace KursMuseum.Presenter
     public class MainPresenter : IMainPresenter
     {
         IMainForm mainView { get; set; }
+        double PriceTicket;
 
         public void Run()
         {
@@ -23,19 +24,25 @@ namespace KursMuseum.Presenter
             mainView = view;
             view.AddEx += AddExClick;
             view.SoldTickets += SoldTicketsClick;
+            view.TypeTicket += TypeTicketChanged;
             List<string> TypeTicket = new List<string> {db.TypeTickets[0].TicketName, db.TypeTickets[1].TicketName, db.TypeTickets[2].TicketName};
-            //view.TypeTickets = db.TypeTickets;
-            //view.TypeTicketsExcursions = db.TypeTicketExcursions;
             view.ScheduleExcursionItems = db.ScheduleExcursionItems;
             view.TypeTickets = TypeTicket;
+            view.PriceTickets = PriceTicket;
         }
+
+        private void TypeTicketChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         private void AddExClick(object sender, EventArgs e)
         {
             var rf = new CreatedPrs(new CreatedEx());
         }
         private void SoldTicketsClick(object sender, EventArgs e)
         {
-            var sf = new SellPrs(new SellForm());
+            var sf = new SellPrs(new SellForm(), new DAL.LocalStorage());
         }
     }
 }

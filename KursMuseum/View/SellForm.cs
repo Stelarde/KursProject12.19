@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KursMuseum.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace KursMuseum.View
         public SellForm()
         {
             InitializeComponent();            
+        }
+        public List<SellTicket> SellTickets
+        {
+            get => dgvSellTicket.DataSource as List<SellTicket>;
+            set => dgvSellTicket.DataSource = value;
         }
     }
 }

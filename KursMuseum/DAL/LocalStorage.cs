@@ -16,16 +16,15 @@ namespace KursMuseum.DAL
 
         public void FillSellTickets()
         {
-            //Заполнить
             SellTickets = new List<SellTicket>()
             {
                 new SellTicket()
                 {
-                    idTicket = "2",
-                    TimeStart = ScheduleExcursionItems[SellTickets[].idTicket].TimeStart,
-                    SellTime = DateTime.Now,
-                    TypeTicketExcursion = TypeTicketExcursions,
+                    idTicket = "1",
+                    //TimeStart = ScheduleExcursionItems[0].TimeStart,
+                    //TypeTicket = TypeTickets,
                     PriceTicket = 15.25,
+                    SellTime = DateTime.Now,
                 }
             };
         }
@@ -61,6 +60,7 @@ namespace KursMuseum.DAL
                     TimeFinish = DateTime.MaxValue,
                     Venue = "3 зал",
                     TicketsLeft = 20,
+                    InitialCost = 100,
                 }
             };
         }

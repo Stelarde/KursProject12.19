@@ -11,16 +11,12 @@ namespace KursMuseum.Model
         //Номер билета
         public string idTicket { get; set; }
         //Время начала экскурсии
-        public string TimeStart { get; set; }
+        public DateTime TimeStart { get; set; }
         //Тип билета
-        public string TypeTicket { get; set; }
+        public TypeTicket TypeTicket { get; set; }
         //Цена
-        public string Price { get; set; }
+        public double PriceTicket { get; set; }
         //Время продажи билета    
         public DateTime SellTime { get; set; }
-        //Тип билета
-        public List<TypeTicketExcursion> TypeTicketExcursion = new List<TypeTicketExcursion>();
-        //Стоимость билета
-        public double PriceTicket { get; set; }
     }
 }

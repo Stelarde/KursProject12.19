@@ -24,5 +24,8 @@ namespace KursMuseum.Model
         [DisplayName("Осталось билетов")]
         //Возможное количество людей
         public int TicketsLeft { get; set; }
+        [DisplayName("Начальная стоимость")]
+        //Начальная стоимость билета
+        public double InitialCost { get; set; }
     }
 }
