@@ -10,10 +10,13 @@ namespace KursMuseum.View
     public interface IMainForm : IView
     {
         double PriceTickets { get; set; }
-        List<ScheduleExcursionItem> ScheduleExcursionItems { get; set; }
-        List<string> TypeTickets { get; set; }
+        List<ScheduleExcursionItem> ScheduleExcursionItems {set; }
+        List<string> TypeTickets { set; }
+        int SelectTypeTckets { get; }
+        double SelectMainTale { get; }
         event EventHandler AddEx;
         event EventHandler SoldTickets;
         event EventHandler TypeTicket;
+        event EventHandler MainTable;
     }
 }

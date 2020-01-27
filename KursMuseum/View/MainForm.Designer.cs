@@ -35,6 +35,8 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbTypeTicket = new System.Windows.Forms.ComboBox();
             this.btnAddExcursion = new System.Windows.Forms.Button();
             this.txtPriceTicket = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.btnDelExcursion = new System.Windows.Forms.Button();
             this.btnChangeExcursion = new System.Windows.Forms.Button();
             this.btnSellTicket = new System.Windows.Forms.Button();
-            this.cbTypeTicket = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMainTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,7 +56,7 @@
             this.dgvMainTable.Location = new System.Drawing.Point(0, 24);
             this.dgvMainTable.Name = "dgvMainTable";
             this.dgvMainTable.RowHeadersVisible = false;
-            this.dgvMainTable.Size = new System.Drawing.Size(565, 317);
+            this.dgvMainTable.Size = new System.Drawing.Size(595, 317);
             this.dgvMainTable.TabIndex = 0;
             // 
             // menuStrip1
@@ -65,7 +65,7 @@
             this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(747, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(780, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,10 +109,27 @@
             this.panel1.Controls.Add(this.btnChangeExcursion);
             this.panel1.Controls.Add(this.btnSellTicket);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(568, 24);
+            this.panel1.Location = new System.Drawing.Point(601, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(179, 317);
             this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Тип билета";
+            // 
+            // cbTypeTicket
+            // 
+            this.cbTypeTicket.FormattingEnabled = true;
+            this.cbTypeTicket.Location = new System.Drawing.Point(3, 25);
+            this.cbTypeTicket.Name = "cbTypeTicket";
+            this.cbTypeTicket.Size = new System.Drawing.Size(172, 21);
+            this.cbTypeTicket.TabIndex = 13;
             // 
             // btnAddExcursion
             // 
@@ -181,28 +198,11 @@
             this.btnSellTicket.Text = "Продать билет";
             this.btnSellTicket.UseVisualStyleBackColor = true;
             // 
-            // cbTypeTicket
-            // 
-            this.cbTypeTicket.FormattingEnabled = true;
-            this.cbTypeTicket.Location = new System.Drawing.Point(3, 25);
-            this.cbTypeTicket.Name = "cbTypeTicket";
-            this.cbTypeTicket.Size = new System.Drawing.Size(172, 21);
-            this.cbTypeTicket.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Тип билета";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 341);
+            this.ClientSize = new System.Drawing.Size(780, 341);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvMainTable);
             this.Controls.Add(this.menuStrip1);

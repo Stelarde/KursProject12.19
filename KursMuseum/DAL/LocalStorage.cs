@@ -60,7 +60,7 @@ namespace KursMuseum.DAL
                     TimeFinish = DateTime.MaxValue,
                     Venue = "3 зал",
                     TicketsLeft = 20,
-                    InitialCost = 100,
+                    InitialCost = 234.15,
                 }
             };
         }

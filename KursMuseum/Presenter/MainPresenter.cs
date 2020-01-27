@@ -25,15 +25,28 @@ namespace KursMuseum.Presenter
             view.AddEx += AddExClick;
             view.SoldTickets += SoldTicketsClick;
             view.TypeTicket += TypeTicketChanged;
+            view.MainTable += ExcursionChoice;
             List<string> TypeTicket = new List<string> {db.TypeTickets[0].TicketName, db.TypeTickets[1].TicketName, db.TypeTickets[2].TicketName};
             view.ScheduleExcursionItems = db.ScheduleExcursionItems;
             view.TypeTickets = TypeTicket;
-            view.PriceTickets = PriceTicket;
+        }
+
+        private void ExcursionChoice(object sender, EventArgs e)
+        {
+            PriceTicket = mainView.SelectMainTale;
         }
 
         private void TypeTicketChanged(object sender, EventArgs e)
         {
-            
+            if (mainView.SelectTypeTckets == 0 | mainView.SelectTypeTckets == 2)
+            {
+                mainView.PriceTickets = PriceTicket * 1.1;
+
+            }
+            else
+            {
+                mainView.PriceTickets = PriceTicket * 1.3;
+            }
         }
 
         private void AddExClick(object sender, EventArgs e)

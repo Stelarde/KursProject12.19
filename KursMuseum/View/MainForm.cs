@@ -13,21 +13,25 @@ namespace KursMuseum.View
 {
     public partial class MainForm : Form, IMainForm
     {
-        public double PriceTickets 
-        { 
+        public double PriceTickets
+        {
             get => double.Parse(txtPriceTicket.Text);
-            set => txtPriceTicket.Text = Convert.ToString(value);  
+            set => txtPriceTicket.Text = Convert.ToString(value);
         }
         public List<ScheduleExcursionItem> ScheduleExcursionItems
         {
-            get => dgvMainTable.DataSource as List<ScheduleExcursionItem>;
+            //get => dgvMainTable.DataSource as List<ScheduleExcursionItem>;
             set => dgvMainTable.DataSource = value;
         }
-        public List<String> TypeTickets 
+        public List<String> TypeTickets
         {
-            get => cbTypeTicket.DataSource as List<String>;
             set => cbTypeTicket.DataSource = value;
         }
+
+        public int SelectTypeTckets => cbTypeTicket.SelectedIndex;
+
+        public double SelectMainTale => (double)dgvMainTable.CurrentRow.Cells[5].Value;
+
         public MainForm()
         {
             InitializeComponent();
@@ -39,12 +43,17 @@ namespace KursMuseum.View
             remove => btnSoldTicket.Click -= value;
         }
 
-        public event EventHandler ChTypeTicket
+        public event EventHandler TypeTicket
         {
             add => cbTypeTicket.SelectedIndexChanged += value;
             remove => cbTypeTicket.SelectedIndexChanged -= value;
         }
 
+        public event EventHandler MainTable
+        {
+            add => dgvMainTable.SelectionChanged += value;
+            remove => dgvMainTable.SelectionChanged -= value;
+        }
         public new void Show()
         {
             Application.Run(this);
