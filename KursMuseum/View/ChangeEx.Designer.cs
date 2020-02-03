@@ -41,7 +41,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tbStartPrice = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbExcurs = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -154,20 +154,20 @@
             this.button1.Text = "Изменить";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmbExcurs
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 14;
+            this.cmbExcurs.FormattingEnabled = true;
+            this.cmbExcurs.Location = new System.Drawing.Point(15, 12);
+            this.cmbExcurs.Name = "cmbExcurs";
+            this.cmbExcurs.Size = new System.Drawing.Size(200, 21);
+            this.cmbExcurs.TabIndex = 14;
             // 
             // ChangeEx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 237);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbExcurs);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbStartPrice);
             this.Controls.Add(this.label6);
@@ -203,6 +203,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbStartPrice;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbExcurs;
     }
 }

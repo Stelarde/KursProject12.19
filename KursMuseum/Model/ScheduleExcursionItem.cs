@@ -9,7 +9,6 @@ namespace KursMuseum.Model
 {
     public class ScheduleExcursionItem
     {
-
         [DisplayName("Название экскурсии")]
         //Название экскурсии     
         public string TypeExcursion { get; set; }
@@ -28,5 +27,10 @@ namespace KursMuseum.Model
         [DisplayName("Начальная стоимость")]
         //Начальная стоимость билета
         public double InitialCost { get; set; }
+        public override string ToString()
+        {
+            return TypeExcursion +" "+ TimeStart.ToString();
+        }
+        
     }
 }

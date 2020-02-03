@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using KursMuseum.View;
 using KursMuseum.Model;
 using KursMuseum.DAL;
+using System.ComponentModel;
 
 namespace KursMuseum.Presenter
 {
@@ -13,13 +14,32 @@ namespace KursMuseum.Presenter
     {
         IChangeEx changeEx;
         ScheduleExcursionItem scheduleExcursionItem = new ScheduleExcursionItem();
-
+        BindingList<ScheduleExcursionItem> scheduleExcursionItems = new BindingList<ScheduleExcursionItem>();
+        UnitOfWork UnitOfWork = new UnitOfWork();
         public ChangeExPrs(IChangeEx ChEx)
         {
             changeEx = ChEx;
+            scheduleExcursionItems = UnitOfWork.RepositoryScheduleExcursionItem.GetAll();
+            changeEx.Excurs = scheduleExcursionItems;
             changeEx.Show();
             ChEx.ChangeExcursion += ChengeExcursionClick;
-            //changeEx.NameExcursion = 
+            ChEx.SelectExcurs += SelectExcursionClick;
+        }
+
+        private void SelectExcursionClick(object sender, EventArgs e)
+        {
+            scheduleExcursionItem.TypeExcursion = changeEx.SelectExcursItem.TypeExcursion;
+            scheduleExcursionItem.Venue = changeEx.SelectExcursItem.Venue;
+            scheduleExcursionItem.TimeStart = changeEx.SelectExcursItem.TimeStart;
+            scheduleExcursionItem.TimeFinish = changeEx.SelectExcursItem.TimeFinish;
+            scheduleExcursionItem.TicketsLeft = changeEx.SelectExcursItem.TicketsLeft;
+            scheduleExcursionItem.InitialCost = changeEx.SelectExcursItem.InitialCost;
+            changeEx.NameExcursion = scheduleExcursionItem.TypeExcursion;
+            changeEx.TimeStartExcursion = scheduleExcursionItem.TimeStart;
+            changeEx.TimeFinishExcursion = scheduleExcursionItem.TimeFinish;
+            changeEx.VenueExcursion = scheduleExcursionItem.Venue;
+            changeEx.QuantityTicketsExcursion = scheduleExcursionItem.TicketsLeft;
+            changeEx.StartPriceTicketExcursion = scheduleExcursionItem.InitialCost;
         }
 
         private void ChengeExcursionClick(object sender, EventArgs e)
@@ -31,7 +51,7 @@ namespace KursMuseum.Presenter
             scheduleExcursionItem.TicketsLeft = changeEx.QuantityTicketsExcursion;
             scheduleExcursionItem.InitialCost = changeEx.StartPriceTicketExcursion;
             UnitOfWork unitOfWork = new UnitOfWork();
-            //unitOfWork.RepositoryScheduleExcursionItem.Create(scheduleExcursionItem);
+            unitOfWork.RepositoryScheduleExcursionItem.Update(scheduleExcursionItem);
             changeEx.Close();
         }
     }

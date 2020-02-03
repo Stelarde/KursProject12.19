@@ -19,6 +19,13 @@ namespace KursMuseum.Presenter
         {
             _mainView.Show();            
         }
+        UnitOfWork unitOfWork = new UnitOfWork();
+
+        public void Update(IMainForm view)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            view.ScheduleExcursionItems = unitOfWork.RepositoryScheduleExcursionItem.GetAll();
+        }
         public MainPresenter (IMainForm view, LocalStorage db)
         {
             _mainView = view;
@@ -27,7 +34,6 @@ namespace KursMuseum.Presenter
             view.TypeTicket += TypeTicketChanged;
             view.MainTable += ExcursionChoice;
             view.ChangeEx += ChangeExcrusion;
-            UnitOfWork unitOfWork = new UnitOfWork();
 
             BindingList<string> TypeTicket = new BindingList<string> 
             {
@@ -41,6 +47,7 @@ namespace KursMuseum.Presenter
         private void ChangeExcrusion(object sender, EventArgs e)
         {
             var rf = new ChangeExPrs(new ChangeEx());
+
         }
 
         private void ExcursionChoice(object sender, EventArgs e)

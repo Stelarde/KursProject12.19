@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KursMuseum.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,6 +47,18 @@ namespace KursMuseum.View
         {
             get => double.Parse(tbStartPrice.Text);
             set => tbStartPrice.Text = Convert.ToString(value); 
+        }
+        public BindingList<ScheduleExcursionItem> Excurs 
+        { 
+            set => cmbExcurs.DataSource = value;
+        }
+
+        public ScheduleExcursionItem SelectExcursItem => (ScheduleExcursionItem)cmbExcurs.SelectedItem;
+
+        public event EventHandler SelectExcurs
+        {
+            add => cmbExcurs.SelectedIndexChanged += value;
+            remove => cmbExcurs.SelectedIndexChanged -= value;
         }
 
         public event EventHandler ChangeExcursion
