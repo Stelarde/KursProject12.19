@@ -47,7 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\LocalStorage.cs" />
+    <Compile Include="DAL\RepositoryScheduleExcursionItem.cs" />
+    <Compile Include="DAL\TestLS.cs" />
+    <Compile Include="DAL\UnitOfWork.cs" />
     <Compile Include="Model\ScheduleExcursionItem.cs" />
     <Compile Include="Model\SellTicket.cs" />
     <Compile Include="Model\TypeTicket.cs" />

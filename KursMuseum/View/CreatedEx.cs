@@ -16,5 +16,23 @@ namespace KursMuseum.View
         {
             InitializeComponent();
         }
+
+        public string NameExcursion => NameEx.Text;
+
+        public DateTime TimeStartExcursion => DateTimeStartEx.Value;
+
+        public DateTime TimeFinishExcursion => DateTimeFinishEx.Value;
+
+        public string VenueExcursion => tbVenue.Text;
+
+        public int QuantityTicketsExcursion => Convert.ToInt32(tbQuantityTickets.Text);
+
+        public double StartPriceTicketExcursion => double.Parse(tbStartPrice.Text);
+
+        public event EventHandler addExcursion
+        {
+            add => button1.Click += value;
+            remove => button1.Click -= value;
+        }
     }
 }

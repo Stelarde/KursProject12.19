@@ -9,6 +9,7 @@ namespace KursMuseum.Model
 {
     public class ScheduleExcursionItem
     {
+
         [DisplayName("Название экскурсии")]
         //Название экскурсии     
         public string TypeExcursion { get; set; }
@@ -23,7 +24,7 @@ namespace KursMuseum.Model
         public string Venue { get; set; } 
         [DisplayName("Осталось билетов")]
         //Возможное количество людей
-        public double TicketsLeft { get; set; }
+        public int TicketsLeft { get; set; }
         [DisplayName("Начальная стоимость")]
         //Начальная стоимость билета
         public double InitialCost { get; set; }

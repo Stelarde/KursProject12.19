@@ -17,9 +17,9 @@ namespace KursMuseum.View
         {
             InitializeComponent();            
         }
-        public List<SellTicket> SellTickets
+        public BindingList<SellTicket> SellTickets
         {
-            get => dgvSellTicket.DataSource as List<SellTicket>;
+            get => dgvSellTicket.DataSource as BindingList<SellTicket>;
             set => dgvSellTicket.DataSource = value;
         }
     }

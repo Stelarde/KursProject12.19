@@ -18,19 +18,19 @@ namespace KursMuseum.View
             get => double.Parse(txtPriceTicket.Text);
             set => txtPriceTicket.Text = Convert.ToString(value);
         }
-        public List<ScheduleExcursionItem> ScheduleExcursionItems
+        public BindingList<ScheduleExcursionItem> ScheduleExcursionItems
         {
-            //get => dgvMainTable.DataSource as List<ScheduleExcursionItem>;
+            get => dgvMainTable.DataSource as BindingList<ScheduleExcursionItem>;
             set => dgvMainTable.DataSource = value;
         }
-        public List<String> TypeTickets
+        public BindingList<String> TypeTickets
         {
             set => cbTypeTicket.DataSource = value;
         }
 
         public int SelectTypeTckets => cbTypeTicket.SelectedIndex;
 
-        public double SelectMainTale => (double)dgvMainTable.CurrentRow.Cells[5].Value;
+        public double SelectMainTable => (double)dgvMainTable.CurrentRow.Cells[5].Value;
 
         public MainForm()
         {

@@ -12,40 +12,46 @@ namespace KursMuseum.Presenter
 {
     public class MainPresenter : IMainPresenter
     {
-        IMainForm mainView { get; set; }
-        double PriceTicket;
+        private IMainForm _mainView { get; set; }
+        private double PriceTicket;
 
         public void Run()
         {
-            mainView.Show();            
+            _mainView.Show();            
         }
         public MainPresenter (IMainForm view, LocalStorage db)
         {
-            mainView = view;
+            _mainView = view;
             view.AddEx += AddExClick;
             view.SoldTickets += SoldTicketsClick;
             view.TypeTicket += TypeTicketChanged;
             view.MainTable += ExcursionChoice;
-            List<string> TypeTicket = new List<string> {db.TypeTickets[0].TicketName, db.TypeTickets[1].TicketName, db.TypeTickets[2].TicketName};
-            view.ScheduleExcursionItems = db.ScheduleExcursionItems;
-            view.TypeTickets = TypeTicket;
+            UnitOfWork unitOfWork = new UnitOfWork();
+
+            BindingList<string> TypeTicket = new BindingList<string> 
+            {
+                db.TypeTickets[0].TicketName, 
+                db.TypeTickets[1].TicketName, 
+                db.TypeTickets[2].TicketName
+            };
+            view.ScheduleExcursionItems = unitOfWork.RepositoryScheduleExcursionItem.GetAll();
+           // view.ScheduleExcursionItems = db.ScheduleExcursionItems;
         }
 
         private void ExcursionChoice(object sender, EventArgs e)
         {
-            PriceTicket = mainView.SelectMainTale;
+            PriceTicket = _mainView.SelectMainTable;
         }
 
         private void TypeTicketChanged(object sender, EventArgs e)
         {
-            if (mainView.SelectTypeTckets == 0 | mainView.SelectTypeTckets == 2)
+            if (_mainView.SelectTypeTckets == 0 | _mainView.SelectTypeTckets == 2)
             {
-                mainView.PriceTickets = PriceTicket * 1.1;
-
+                _mainView.PriceTickets = PriceTicket * 1.1;
             }
             else
             {
-                mainView.PriceTickets = PriceTicket * 1.3;
+                _mainView.PriceTickets = PriceTicket * 1.3;
             }
         }
 

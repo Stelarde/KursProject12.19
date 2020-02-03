@@ -4,25 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using KursMuseum.Model;
+using System.ComponentModel;
 
 namespace KursMuseum.DAL
 {
     public class LocalStorage
     {  
-        public List<SellTicket> SellTickets = new List<SellTicket>();
-        public List<TypeTicket> TypeTickets = new List<TypeTicket>();
-        public List<ScheduleExcursionItem> ScheduleExcursionItems = new List<ScheduleExcursionItem>();
-        public List<TypeTicketExcursion> TypeTicketExcursions = new List<TypeTicketExcursion>();
+        public BindingList<SellTicket> SellTickets;
+        public BindingList<TypeTicket> TypeTickets;
+        public BindingList<ScheduleExcursionItem> ScheduleExcursionItems;
 
         public void FillSellTickets()
         {
-            SellTickets = new List<SellTicket>()
+            SellTickets = new BindingList<SellTicket>()
             {
                 new SellTicket()
                 {
                     idTicket = "1",
-                    //TimeStart = ScheduleExcursionItems[0].TimeStart,
-                    //TypeTicket = TypeTickets,
                     PriceTicket = 15.25,
                     SellTime = DateTime.Now,
                 }
@@ -30,7 +28,7 @@ namespace KursMuseum.DAL
         }
         public void FillTypeTickets()
         {
-            TypeTickets = new List<TypeTicket>()
+            TypeTickets = new BindingList<TypeTicket>()
             {
                 new TypeTicket()
                 {
@@ -49,29 +47,33 @@ namespace KursMuseum.DAL
                 }
             };
         }
+        //public void FillScheduleExcursionItems(string NE, DateTime TSE, DateTime TFE, string VE, int QTE, double SPTE)
+        //{
+        //    ScheduleExcursionItems = new BindingList<ScheduleExcursionItem>()
+        //    {
+        //        new ScheduleExcursionItem()
+        //        {
+        //            TypeExcursion=NE,
+        //            TimeFinish=TFE,
+        //            TimeStart=TSE,
+        //            Venue=VE,
+        //            TicketsLeft=QTE,
+        //            InitialCost=SPTE
+        //        }
+        //    };
+        //}
         public void FillScheduleExcursionItems()
         {
-            ScheduleExcursionItems = new List<ScheduleExcursionItem>()
+            ScheduleExcursionItems = new BindingList<ScheduleExcursionItem>()
             {
                 new ScheduleExcursionItem()
                 {
-                    TypeExcursion = "Дворцовые перевороты",
-                    TimeStart = DateTime.Now,
-                    TimeFinish = DateTime.MaxValue,
-                    Venue = "3 зал",
-                    TicketsLeft = 20,
-                    InitialCost = 234.15,
-                }
-            };
-        }
-        public void FillTypeTicketExcursions()
-        {
-            TypeTicketExcursions = new List<TypeTicketExcursion>()
-            {
-                new TypeTicketExcursion()
-                {
-                    TypeTickets = TypeTickets,
-                    ScheduleExcursionItems = ScheduleExcursionItems,
+                    TypeExcursion="Дворцовые перевороты",
+                    TimeFinish=DateTime.MaxValue,
+                    TimeStart=DateTime.Now,
+                    Venue="На хуе",
+                    TicketsLeft=50,
+                    InitialCost=300
                 }
             };
         }
@@ -80,7 +82,7 @@ namespace KursMuseum.DAL
             FillSellTickets();
             FillTypeTickets();
             FillScheduleExcursionItems();
-            FillTypeTicketExcursions();
+            //FillScheduleExcursionItems(NE, TSE, TFE, VE, QTE, SPTE);
         }
     }
 }

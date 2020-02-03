@@ -8,7 +8,7 @@ using KursMuseum.View;
 
 namespace KursMuseum.Presenter
 {
-    class SellPrs
+    public class SellPrs
     {
         ISellForm sellForm;
         public SellPrs(ISellForm RF, LocalStorage db)
