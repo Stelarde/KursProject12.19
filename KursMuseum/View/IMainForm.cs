@@ -19,5 +19,6 @@ namespace KursMuseum.View
         event EventHandler SoldTickets;
         event EventHandler TypeTicket;
         event EventHandler MainTable;
+        event EventHandler ChangeEx;
     }
 }

@@ -26,6 +26,7 @@ namespace KursMuseum.Presenter
             view.SoldTickets += SoldTicketsClick;
             view.TypeTicket += TypeTicketChanged;
             view.MainTable += ExcursionChoice;
+            view.ChangeEx += ChangeExcrusion;
             UnitOfWork unitOfWork = new UnitOfWork();
 
             BindingList<string> TypeTicket = new BindingList<string> 
@@ -35,7 +36,11 @@ namespace KursMuseum.Presenter
                 db.TypeTickets[2].TicketName
             };
             view.ScheduleExcursionItems = unitOfWork.RepositoryScheduleExcursionItem.GetAll();
-           // view.ScheduleExcursionItems = db.ScheduleExcursionItems;
+        }
+
+        private void ChangeExcrusion(object sender, EventArgs e)
+        {
+            var rf = new ChangeExPrs(new ChangeEx());
         }
 
         private void ExcursionChoice(object sender, EventArgs e)

@@ -8,7 +8,7 @@ namespace KursMuseum.DAL
 {
     public class UnitOfWork
     {
-        private LocalStorage db = TestLS.LocalStorage;
+        private LocalStorage db = LSS.LocalStorage;
         private RepositoryScheduleExcursionItem repositoryScheduleExcursionItem;
         public RepositoryScheduleExcursionItem RepositoryScheduleExcursionItem
         {

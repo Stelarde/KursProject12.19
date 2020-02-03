@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace KursMuseum.DAL
 {
     
-    public static class TestLS
+    public static class LSS
     {
         
         private static LocalStorage localStorage = new LocalStorage();

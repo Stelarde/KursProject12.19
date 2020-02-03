@@ -32,7 +32,7 @@ namespace KursMuseum.Presenter
             scheduleExcursionItem.InitialCost = createdEx.StartPriceTicketExcursion;
             UnitOfWork unitOfWork = new UnitOfWork();
             unitOfWork.RepositoryScheduleExcursionItem.Create(scheduleExcursionItem);
-            
+            createdEx.Close();
         }
     }
 }

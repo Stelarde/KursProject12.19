@@ -54,6 +54,13 @@ namespace KursMuseum.View
             add => dgvMainTable.SelectionChanged += value;
             remove => dgvMainTable.SelectionChanged -= value;
         }
+
+        public event EventHandler ChangeEx
+        {
+            add => btnChangeExcursion.Click += value;
+            remove => btnChangeExcursion.Click -= value;
+        }
+
         public new void Show()
         {
             Application.Run(this);
