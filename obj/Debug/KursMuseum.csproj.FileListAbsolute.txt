@@ -1,0 +1,13 @@
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\bin\Debug\KursMuseum.exe.config
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\bin\Debug\KursMuseum.exe
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\bin\Debug\KursMuseum.pdb
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\obj\Debug\KursMuseum.csprojAssemblyReference.cache
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\obj\Debug\KursMuseum.Properties.Resources.resources
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\obj\Debug\KursMuseum.csproj.GenerateResource.cache
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\obj\Debug\KursMuseum.exe
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\obj\Debug\KursMuseum.pdb
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\obj\Debug\KursMuseum.View.MainForm.resources
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\obj\Debug\KursMuseum.View.Diagram.resources
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\obj\Debug\KursMuseum.View.CreatedEx.resources
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\obj\Debug\KursMuseum.View.SellForm.resources
+E:\Учеба\AIS\KursJob\KursMuseum\KursMuseum\obj\Debug\KursMuseum.View.ChangeEx.resources
